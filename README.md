@@ -2,7 +2,7 @@
 
 A modern, animated 3D developer portfolio built with React, Three.js, TailwindCSS, and motion effects — designed to showcase my expertise in building scalable, optimized, and AI-integrated web solutions.
 
-![Portfolio Screenshot](https://github.com/ajaydesai2208/ajay-portfolio/blob/main/public/assets/projects/ajay-portfolio-screenshot.png?raw=true)
+![Portfolio Screenshot](https://github.com/ajaydesai2208/ajay-desai-portfolio/blob/main/public/assets/projects/ajay-portfolio-screenshot.png?raw=true)
 
 ---
 
