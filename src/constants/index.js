@@ -9,7 +9,7 @@ export const myProjects = [
       "Architected a scalable backend infrastructure using tRPC for type-safe API communication, FastAPI for server-side logic, and Weaviate vector database for efficient document indexing and retrieval, achieving a processing throughput of 50+ PDFs per hour and reducing manual effort by 80%.",
       "Deployed the platform using Cloudflare R2 for secure file storage, Weaviate Cloud for vector embeddings, and Docker to ensure scalability, reliability, and efficient AI-driven document retrieval for legal research.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // You can update this with a specific project link if you have one later
+    href: "https://www.linkedin.com/in/ajayhdesai/", // Keep LinkedIn for this project
     image: "/assets/projects/ai-legal-research.jpg", // We'll need to create this image later
     tags: [
       {
@@ -53,7 +53,7 @@ export const myProjects = [
       "Developed a responsive frontend with Material UI, React, and Redux Toolkit for state management, and integrated a machine learning model using Regression.js for revenue predictions; built and optimized backend APIs with Node.js, Express.js, and MongoDB, reducing response times by 30%.",
       "Deployed the application on Fly.io (backend) and Vercel (frontend), increasing load speed by 40% for real-time data analysis.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // You can update this with a specific project link if you have one later
+    href: "https://github.com/ajaydesai2208/Findash",
     image: "/assets/projects/findash.jpg", // We'll need to create this image later
     tags: [
       {
@@ -107,7 +107,7 @@ export const myProjects = [
       "Integrated the OpenAI API with the Spring Boot backend using Langchain4j to generate recipe suggestions based on user-provided ingredients, dynamically update fridge inventory as users select recipes, and optimize API calls for cost efficiency.",
       "Implemented user authentication and data persistence using MySQL and Spring Boot, enabling users to securely log in, manage a virtual fridge, save preferences, and access favorite recipes.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // You can update this with a specific project link if you have one later
+    href: "https://github.com/ajaydesai2208/MythicalFridge",
     image: "/assets/projects/mythical-fridge.jpg", // We'll need to create this image later
     tags: [
       {
@@ -151,7 +151,7 @@ export const myProjects = [
       "Integrated AI-powered metadata generation for uploaded videos, improving search accuracy and personalized recommendations; utilized Node.js and MongoDB via Aite for backend operations, achieving a 99% success rate while managing 500 concurrent user sessions during stress testing.",
       "Optimized performance with Tailwind CSS, implementing responsive layouts and dynamic navigation, ensuring seamless feature delivery.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // You can update this with a specific project link if you have one later
+    href: "https://github.com/ajaydesai2208/vaaj",
     image: "/assets/projects/vaaj.jpg", // We'll need to create this image later
     tags: [
       {
@@ -190,7 +190,7 @@ export const myProjects = [
       "Incorporated an interactive UI with Streamlit, enabling real-time content generation and prompt fine-tuning for consistent tone and topic depth.",
       "Rolled out the application on Hugging Face Spaces with secure API integration for seamless real-time blog generation and improving accessibility.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // You can update this with a specific project link if you have one later
+    href: "https://www.linkedin.com/in/ajayhdesai/", // Keep LinkedIn for this project
     image: "/assets/projects/generative-ai-blog.jpg", // We'll need to create this image later
     tags: [
       {
@@ -234,7 +234,7 @@ export const myProjects = [
       "Enabled secure user authentication with JWT and authorization using Spring Security, ensuring data privacy.",
       "Utilized AWS S3 for scalable file storage and DynamoDB for efficient metadata management, enhancing the reliability and cost-effectiveness.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // You can update this with a specific project link if you have one later
+    href: "https://github.com/ajaydesai2208/FileSharingApp",
     image: "/assets/projects/file-sharing.jpg", // We'll need to create this image later
     tags: [
       {
@@ -278,7 +278,7 @@ export const myProjects = [
       "Enhanced anime discovery through a tkinter GUI with sorting options and autocomplete for seamless navigation.",
       "Deployed the system on Heroku, ensuring scalability and accessibility for a broader user base.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // You can update this with a specific project link if you have one later
+    href: "https://github.com/ajaydesai2208/Anime-Recommendation-System",
     image: "/assets/projects/anime-recommendation.jpg", // We'll need to create this image later
     tags: [
       {
@@ -361,7 +361,7 @@ export const experiences = [
     ],
   },
   {
-    title: "Software Engineer Intern",
+    title: "Software Engineer",
     job: "Elevar Media, Mumbai, India",
     date: "July 2022 - December 2022",
     contents: [

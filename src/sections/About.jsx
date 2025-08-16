@@ -1,11 +1,28 @@
-import { useRef } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import Card from "../components/Card";
-import { Globe } from "../components/globe";
+const Globe = lazy(() => import("../components/globe").then(m => ({ default: m.Globe })));
 import CopyEmailButton from "../components/CopyEmailButton";
 import { Frameworks } from "../components/Frameworks";
 
 const About = () => {
   const grid2Container = useRef();
+  const [showGlobe, setShowGlobe] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShowGlobe(true);
+          }
+        });
+      },
+      { rootMargin: "200px" }
+    );
+    const section = document.getElementById("about");
+    if (section) observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="c-space section-spacing" id="about">
       <h2 className="text-heading">About Me</h2>
@@ -14,7 +31,9 @@ const About = () => {
         <div className="flex items-end grid-default-color grid-1">
           <img
             src="assets/ajay.jpg"
-            className="absolute inset-0 w-full h-full object-cover rounded-2xl" // Changed className
+            loading="lazy"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
           />
           <div className="z-10 p-4 rounded-lg bg-black/30 backdrop-blur-sm">
             <p className="headtext">Hi, I&apos;m Ajay Desai</p>
@@ -89,9 +108,13 @@ const About = () => {
               relocation.
             </p>
           </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
-          </figure>
+          {showGlobe && (
+            <figure className="absolute left-[30%] top-[10%]">
+              <Suspense fallback={null}>
+                <Globe />
+              </Suspense>
+            </figure>
+          )}
         </div>
         {/* Grid 4 */}
         <div className="grid-special-color grid-4">

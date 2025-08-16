@@ -4,6 +4,8 @@ const Card = ({ style, text, image, containerRef }) => {
     <motion.img
       className="absolute w-15 cursor-grab"
       src={image}
+      loading="lazy"
+      decoding="async"
       style={style}
       whileHover={{ scale: 1.05 }}
       drag
