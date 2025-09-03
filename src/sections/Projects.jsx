@@ -21,7 +21,6 @@ const Projects = () => {
   }, []);
 
   const handleMouseMove = (e) => {
-    if (prefersReducedMotion.current) return;
     if (rafScheduled.current) return;
     rafScheduled.current = true;
     requestAnimationFrame(() => {
@@ -42,7 +41,7 @@ const Projects = () => {
       {myProjects.map((project) => (
         <Project key={project.id} {...project} setPreview={setPreview} />
       ))}
-      {!prefersReducedMotion.current && preview && (
+      {preview && (
         <motion.img
           className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
           src={preview}

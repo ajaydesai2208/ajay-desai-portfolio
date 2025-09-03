@@ -45,10 +45,19 @@ const ProjectDetails = ({
     // Lock body scroll
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    // Mark modal open for global listeners (performance optimizations)
+    document.body.classList.add("modal-open");
+    try {
+      window.dispatchEvent(new CustomEvent("modal-open-change", { detail: true }));
+    } catch (_) {}
     // Focus the dialog
     setTimeout(() => dialogRef.current?.focus(), 0);
     return () => {
       document.body.style.overflow = originalOverflow;
+      document.body.classList.remove("modal-open");
+      try {
+        window.dispatchEvent(new CustomEvent("modal-open-change", { detail: false }));
+      } catch (_) {}
       if (previouslyFocusedRef.current && previouslyFocusedRef.current.focus) {
         previouslyFocusedRef.current.focus();
       }
@@ -57,7 +66,7 @@ const ProjectDetails = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-0 md:backdrop-blur-sm"
       onClick={closeModal}
     >
       <motion.div
@@ -65,7 +74,7 @@ const ProjectDetails = ({
         aria-modal="true"
         ref={dialogRef}
         tabIndex={-1}
-        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto m-4 border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
+        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto m-4 border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10 will-change-transform transform-gpu"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         onClick={(e) => e.stopPropagation()}
@@ -79,6 +88,7 @@ const ProjectDetails = ({
         <img
           src={image}
           alt={title}
+          decoding="async"
           className="w-full max-h-[40vh] object-cover rounded-t-2xl"
         />
         <div className="p-5">

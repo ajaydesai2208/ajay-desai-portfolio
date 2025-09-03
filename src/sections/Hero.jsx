@@ -36,7 +36,7 @@ const Hero = () => {
           className="absolute inset-0"
           style={{ width: "100vw", height: "100vh" }}
         >
-          <Canvas camera={{ position: [0, 1, 3] }}>
+          <Canvas camera={{ position: [0, 1, 3] }} frameloop="always">
             <Suspense fallback={<Loader />}>
               <Float>
                 <Astronaut
@@ -54,7 +54,15 @@ const Hero = () => {
 };
 
 function Rig() {
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    const handler = (e) => setPaused(!!e.detail);
+    window.addEventListener("modal-open-change", handler);
+    return () => window.removeEventListener("modal-open-change", handler);
+  }, []);
+
   return useFrame((state, delta) => {
+    if (paused) return;
     easing.damp3(
       state.camera.position,
       [state.mouse.x / 10, 1 + state.mouse.y / 10, 3],

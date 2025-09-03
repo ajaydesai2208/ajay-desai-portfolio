@@ -2,7 +2,7 @@
 
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { twMerge } from "tailwind-merge";
 
@@ -42,6 +42,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
   const canvasRef = useRef(null);
   const pointerInteracting = useRef(null);
   const pointerInteractionMovement = useRef(0);
+  const [paused, setPaused] = useState(false);
 
   const r = useMotionValue(0);
   const rs = useSpring(r, {
@@ -66,6 +67,12 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
   };
 
   useEffect(() => {
+    const handler = (e) => setPaused(!!e.detail);
+    window.addEventListener("modal-open-change", handler);
+    return () => window.removeEventListener("modal-open-change", handler);
+  }, []);
+
+  useEffect(() => {
     const onResize = () => {
       if (canvasRef.current) {
         width = canvasRef.current.offsetWidth;
@@ -80,6 +87,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       width: width * 2,
       height: width * 2,
       onRender: (state) => {
+        if (paused) return;
         if (!pointerInteracting.current) phi += 0.005;
         state.phi = phi + rs.get();
         state.width = width * 2;
@@ -92,7 +100,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
-  }, [rs, config]);
+  }, [rs, config, paused]);
 
   return (
     <div
