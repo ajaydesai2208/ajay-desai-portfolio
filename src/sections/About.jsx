@@ -38,7 +38,7 @@ const About = () => {
           <div className="z-10 p-4 rounded-lg bg-black/30 backdrop-blur-sm">
             <p className="headtext">Hi, I&apos;m Ajay Desai</p>
             <p className="subtext">
-              I have gained end-to-end development experience, specializing in building scalable applications, optimizing performance, and integrating AI solutions.
+              Full-Stack Developer with 4+ years of experience building scalable applications across Java, Spring Boot, Hibernate, Python, FastAPI, and Node.js—paired with React.js and Next.js on the frontend. Skilled in microservices, GraphQL/REST APIs, and cloud-native deployments on AWS and Kubernetes. Experienced in integrating AI (LLMs, LangChain) and data platforms to deliver secure, performant solutions.
             </p>
           </div>
         </div>
@@ -103,10 +103,7 @@ const About = () => {
         <div className="grid-black-color grid-3">
           <div className="z-10 w-[50%]">
             <p className="headtext">Time Zone</p>
-            <p className="subtext">
-              I&apos;m based in Boston, MA, and open to remote work and also
-              relocation.
-            </p>
+            <p className="subtext">I&apos;m based in New York, and open to remote or relocation.</p>
           </div>
           {showGlobe && (
             <figure className="absolute left-[30%] top-[10%]">
