@@ -183,15 +183,16 @@ export const myProjects = [
   },
   {
     id: 5,
-    title: "Generative AI Blog Generation Application",
+    title: "Finquant: AI Investment Agent",
     description:
-      "Engineered a Generative AI tool leveraging Llama 3 and LangChain for automatic blog creation, reducing content drafting time by 40% with custom prompt templates.",
+      "Streamlit AI investment assistant that guides the user from charting and snapshot to fundamentals and catalysts, pair analytics, strategy selection and comparison, scenario and payoff views, sizing and trade plan, and export to trade tickets and PDF.",
     subDescription: [
-      "Incorporated an interactive UI with Streamlit, enabling real-time content generation and prompt fine-tuning for consistent tone and topic depth.",
-      "Rolled out the application on Hugging Face Spaces with secure API integration for seamless real-time blog generation and improving accessibility.",
+      "Integrated quant and data pipeline using yfinance for prices and options, Reuters RSS and SEC EDGAR for catalysts, Black Scholes for options pricing and ATM Greeks, ATR based risk sizing, and rolling z score for relative value, producing breakevens, max gain and loss, DTE, and position sizing.",
+      "AI powered analysis that turns market context and news into readable insights, event playbooks, and scenario narratives, with a report builder the user can add items to and review.",
+      "Fast and polished UX with skeleton loaders, inline cache TTL hints, a three hour background refresh and news change banner, input validation with disabled compare until tickers are valid, regime badges, uniform buttons, high contrast mode, and a risk budget badge.",
     ],
-    href: "https://www.linkedin.com/in/ajayhdesai/", // Keep LinkedIn for this project
-    image: "/assets/projects/generative-ai-blog.jpg", // We'll need to create this image later
+    href: "https://github.com/ajaydesai2208/AI_Investment_Agent",
+    image: "/assets/projects/ai-investment-agent.jpg",
     tags: [
       {
         id: 1,
@@ -200,28 +201,23 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "LLM",
-        path: "/assets/logos/llm.svg", // This might need a custom SVG
-      },
-      {
-        id: 3,
-        name: "Llama 3",
-        path: "/assets/logos/llama3.svg", // This might need a custom SVG
-      },
-      {
-        id: 4,
         name: "Streamlit",
         path: "/assets/logos/streamlit.svg",
       },
       {
-        id: 5,
-        name: "Hugging Face",
-        path: "/assets/logos/huggingface.svg",
+        id: 3,
+        name: "OpenAI API",
+        path: "/assets/logos/openai.svg",
       },
       {
-        id: 6,
-        name: "LangChain",
-        path: "/assets/logos/langchain.svg",
+        id: 4,
+        name: "Docker",
+        path: "/assets/logos/docker.svg",
+      },
+      {
+        id: 5,
+        name: "Google Cloud",
+        path: "/assets/logos/gcp.svg",
       },
     ],
   },
